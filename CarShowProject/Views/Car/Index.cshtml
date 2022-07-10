@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Brand>
+
+@foreach(Brand b in Model){
+    <h3>@b.Name</h3>
+    <ul>
+    @foreach(Vehicle v in b.Vehicles){
+            @if (b.IsActive==true)
+            {
+                <li>CarName: @v.Name MSRP: @v.MSRP</li>
+            }
+            else
+            {
+                <li>CarName: @v.Name </li>
+            }
+        }
+    </ul>
+}
